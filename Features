@@ -1,0 +1,104 @@
+# ReachBase
+
+Get paid for your attention.
+
+ReachBase is a decentralized paid messaging platform built on Base Network that allows creators, founders, developers, influencers, investors, recruiters, and professionals to monetize inbound messages.
+
+Users set a custom USDC fee for receiving direct messages. Senders pay the fee on-chain, and creators earn revenue instantly. ReachBase combines Web3 identity, on-chain payments, creator monetization, and decentralized communication into a single platform.
+
+## Features
+
+### Creator Profiles
+
+* Wallet-based authentication
+* Custom usernames
+* Profile customization
+* Social links
+* Farcaster integration
+* Adjustable DM pricing
+
+### Paid Messaging
+
+* USDC payments on Base
+* Instant creator payouts
+* Transaction verification
+* Spam prevention
+* Message history
+
+### Analytics
+
+* Revenue tracking
+* Message statistics
+* Conversion metrics
+* Referral earnings
+* Creator growth dashboard
+
+### Referral System
+
+* Referral rewards
+* Affiliate dashboard
+* Revenue sharing
+* Referral leaderboards
+
+### NFT Achievement System
+
+* Creator badges
+* Revenue milestones
+* Messaging milestones
+* Community rewards
+
+### Security
+
+* Wallet authentication
+* Smart contract validation
+* Rate limiting
+* Anti-spam controls
+* On-chain payment verification
+
+## Technology Stack
+
+Frontend:
+
+* Next.js 15
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+
+Blockchain:
+
+* Base Network
+* Solidity
+* Hardhat
+* OpenZeppelin
+
+Wallets:
+
+* Coinbase Wallet
+* Smart Wallet
+* MetaMask
+* RainbowKit
+
+Backend:
+
+* Supabase
+* PostgreSQL
+* Edge Functions
+
+Infrastructure:
+
+* Vercel
+* Cloudflare
+* GitHub Actions
+
+## Revenue Model
+
+Platform Fees:
+
+* 5% transaction fee
+* Premium subscriptions
+* Featured profiles
+* Sponsored placements
+
+## Vision
+
+Become the default communication layer for creators and professionals on Base Network.
