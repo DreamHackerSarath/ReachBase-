@@ -1,0 +1,358 @@
+# ReachBase
+
+> Get paid for your attention on Base.
+
+ReachBase is a decentralized creator monetization and paid messaging platform built on Base. Users set a custom USDC fee for receiving direct messages, allowing creators, founders, developers, investors, recruiters, and professionals to monetize inbound communication.
+
+---
+
+## Features
+
+### Paid Messaging
+
+* Set custom DM fee in USDC
+* Instant on-chain payments
+* Spam-resistant inbox
+* Direct creator monetization
+
+### Creator Profiles
+
+* Wallet-based identity
+* Username and bio
+* Social links
+* Farcaster integration
+* Analytics dashboard
+
+### Revenue Dashboard
+
+* Total earnings
+* Monthly earnings
+* Message volume
+* Conversion tracking
+
+### Referral Program
+
+* Referral codes
+* Revenue sharing
+* Referral leaderboards
+
+### NFT Achievement Badges
+
+* First Paid Message
+* 100 Messages
+* Top Creator
+* Revenue Milestones
+
+### Security
+
+* Smart contract verified payments
+* Wallet authentication
+* Rate limiting
+* Anti-spam protection
+
+---
+
+## Architecture
+
+```text
+Frontend
+ ├── Next.js 15
+ ├── TypeScript
+ ├── Tailwind CSS
+ ├── shadcn/ui
+ └── RainbowKit
+
+Backend
+ ├── Supabase
+ ├── PostgreSQL
+ ├── Edge Functions
+ └── Storage
+
+Blockchain
+ ├── Base Mainnet
+ ├── Solidity
+ ├── Hardhat
+ └── OpenZeppelin
+```
+
+---
+
+## Repository Structure
+
+```text
+reachbase/
+│
+├── apps/
+│   └── web/
+│       ├── app/
+│       │   ├── page.tsx
+│       │   ├── creators/
+│       │   ├── inbox/
+│       │   ├── analytics/
+│       │   ├── settings/
+│       │   ├── referrals/
+│       │   ├── notifications/
+│       │   └── admin/
+│       │
+│       ├── components/
+│       ├── hooks/
+│       ├── services/
+│       ├── providers/
+│       ├── stores/
+│       ├── lib/
+│       └── types/
+│
+├── contracts/
+│   ├── ReachBase.sol
+│   ├── Treasury.sol
+│   ├── ReferralManager.sol
+│   ├── NFTBadge.sol
+│   └── Subscription.sol
+│
+├── database/
+│   ├── schema.sql
+│   ├── migrations/
+│   └── policies.sql
+│
+├── scripts/
+│   ├── deploy.ts
+│   ├── verify.ts
+│   └── seed.ts
+│
+├── tests/
+│   ├── ReachBase.test.ts
+│   ├── Treasury.test.ts
+│   └── Referral.test.ts
+│
+├── docs/
+│   ├── architecture.md
+│   ├── contracts.md
+│   ├── api.md
+│   └── deployment.md
+│
+├── public/
+├── .github/
+│   └── workflows/
+│       ├── test.yml
+│       ├── lint.yml
+│       └── deploy.yml
+│
+├── .env.example
+├── package.json
+├── turbo.json
+├── hardhat.config.ts
+├── next.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+## Smart Contracts
+
+### ReachBase.sol
+
+Core contract responsible for:
+
+* Profile creation
+* Message fee management
+* Paid messaging
+* Earnings tracking
+* Creator statistics
+
+### Treasury.sol
+
+Responsible for:
+
+* Platform fees
+* Revenue distribution
+* Withdrawal management
+
+### ReferralManager.sol
+
+Responsible for:
+
+* Referral tracking
+* Commission payouts
+* Affiliate rewards
+
+### NFTBadge.sol
+
+Responsible for:
+
+* Achievement NFTs
+* Creator milestones
+* Verification badges
+
+---
+
+## Database Schema
+
+### Users
+
+```sql
+CREATE TABLE users (
+ id UUID PRIMARY KEY,
+ wallet_address TEXT UNIQUE,
+ username TEXT UNIQUE,
+ bio TEXT,
+ avatar TEXT,
+ dm_fee NUMERIC,
+ earnings NUMERIC DEFAULT 0,
+ verified BOOLEAN DEFAULT FALSE,
+ created_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+### Messages
+
+```sql
+CREATE TABLE messages (
+ id UUID PRIMARY KEY,
+ sender TEXT,
+ receiver TEXT,
+ content TEXT,
+ tx_hash TEXT,
+ amount NUMERIC,
+ status TEXT,
+ created_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+### Payments
+
+```sql
+CREATE TABLE payments (
+ id UUID PRIMARY KEY,
+ sender TEXT,
+ receiver TEXT,
+ amount NUMERIC,
+ platform_fee NUMERIC,
+ tx_hash TEXT,
+ created_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+### Referrals
+
+```sql
+CREATE TABLE referrals (
+ id UUID PRIMARY KEY,
+ referrer TEXT,
+ referred TEXT,
+ commission NUMERIC,
+ created_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+---
+
+## Revenue Model
+
+| Feature              | Fee       |
+| -------------------- | --------- |
+| Paid Message         | 5%        |
+| Featured Profile     | $10/month |
+| Verified Creator     | $5/month  |
+| Creator Subscription | 5%        |
+| Sponsored Placement  | Variable  |
+
+---
+
+## Token (Future)
+
+### REACH Token
+
+Supply:
+
+```text
+1,000,000,000 REACH
+```
+
+Allocation:
+
+```text
+40% Community
+20% Ecosystem
+15% Team
+10% Treasury
+10% Investors
+5% Liquidity
+```
+
+Utility:
+
+* Governance
+* Fee discounts
+* Premium access
+* Creator boosts
+* Staking rewards
+
+---
+
+## Roadmap
+
+### Phase 1
+
+* Wallet login
+* Creator profiles
+* Paid messaging
+* Revenue dashboard
+
+### Phase 2
+
+* Farcaster integration
+* NFT badges
+* Referrals
+* Notifications
+
+### Phase 3
+
+* Creator subscriptions
+* Mobile app
+* AI inbox assistant
+
+### Phase 4
+
+* DAO governance
+* REACH token
+* Cross-chain messaging
+
+---
+
+## Deployment
+
+### Install
+
+```bash
+git clone https://github.com/reachbase/reachbase.git
+
+cd reachbase
+
+npm install
+```
+
+### Run
+
+```bash
+npm run dev
+```
+
+### Deploy Contracts
+
+```bash
+npx hardhat run scripts/deploy.ts --network base
+```
+
+### Deploy Frontend
+
+```bash
+vercel deploy
+```
+
+---
+
+## Vision
+
+ReachBase aims to become the default communication and monetization layer for creators on Base by combining messaging, payments, identity, analytics, and social discovery into a single decentralized platform.
