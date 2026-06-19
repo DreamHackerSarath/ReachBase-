@@ -1,0 +1,43 @@
+reachbase/
+│
+├── apps/
+│   └── web/
+│       ├── app/
+│       │   ├── page.tsx
+│       │   ├── creators/
+│       │   ├── profile/
+│       │   ├── inbox/
+│       │   ├── analytics/
+│       │   ├── referrals/
+│       │   ├── notifications/
+│       │   ├── admin/
+│       │   └── settings/
+│       │
+│       ├── components/
+│       ├── hooks/
+│       ├── lib/
+│       ├── services/
+│       ├── providers/
+│       ├── stores/
+│       └── types/
+│
+├── contracts/
+│   ├── ReachBase.sol
+│   ├── Treasury.sol
+│   ├── ReferralManager.sol
+│   ├── NFTBadge.sol
+│   └── Subscription.sol
+│
+├── database/
+│   ├── migrations/
+│   ├── seeds/
+│   └── schema.sql
+│
+├── api/
+├── docs/
+├── scripts/
+├── tests/
+├── public/
+├── .github/
+│   └── workflows/
+└── README.md
